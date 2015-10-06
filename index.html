@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href=https://s3-ap-southeast-1.amazonaws.com/call-levels.com/seo/favicon.ico type=image/x-icon>
+    <link href="mui.min.css" rel="stylesheet" type="text/css" />
+    <link href="custom.css" rel="stylesheet" type="text/css" />
+    <script src="mui.min.js"></script>
+    <script type="text/javascript">
+        (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-v1.6.1.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"init data addListener removeListener setIdentity logout track link sendSMS referrals credits creditHistory applyCode validateCode getCode redeem banner closeBanner".split(" "), 0);
+
+        branch.init('key_live_opjHj45QzNWHDEovg5XEobfiAvh299E7');
+        function sendSMS(form) {
+            var phone = form.phone.value;
+            var linkData = {
+                tags: [],
+                channel: 'Website',
+                feature: 'TextMeTheApp',
+                data: {
+                    "foo": "bar"
+                }
+            };
+            var options = {};
+            var callback = function(err, result) {
+                if (err) {
+                    alert("Sorry, something went wrong. Please try again.");
+                }
+                else {
+                    alert("Success. A download link will be sent to your phone soon!");
+                }
+            };
+            branch.sendSMS(phone, linkData, options, callback);
+            form.phone.value = "";
+        }
+    </script>
+  </head>
+  <body>
+    <div class="mui-appbar nav">
+      <div class="mui-container">
+        <a href="http://www.call-levels.com/" target="_blank"><img src="https://s3-ap-southeast-1.amazonaws.com/call-levels.com/followme/followme-logo.png" alt="" class="center" /></a>
+      </div>
+    </div>
+    <div class="mui-container">
+      <br/>
+      <div class="mui-panel" style="">
+        <div class="mui-text-center">
+          <a href="http://www.call-levels.com/" target="_blank"><img src="https://s3-ap-southeast-1.amazonaws.com/call-levels.com/edm/standard-header-image.jpg" style="width: 100%;height: auto;" alt="" class="mui-z1"/></a>
+          <br/><br/>
+          <div class="mui-text-display1 mui-text-black">Get Call Levels</div>
+          <form onsubmit="sendSMS(this); return false;">
+            <div class="mui-row">
+              <div class="mui-col-sm-4 mui-col-sm-offset-4">
+                <div class="mui-form-group">
+                  <input id="phone" name="phone" type="tel" class="mui-form-control">
+                  <label class="mui-form-floating-label">Enter your mobile number eg: +65 3456 7890</label>
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="mui-btn mui-btn-default mui-btn-primary mui-z1">Text me the app</button>
+          </form>
+        </div>
+      </div>
+      <div class="mui-text-center">
+        <a href="https://itunes.apple.com/us/app/call-levels/id937109871" target="_blank"><img src="https://s3-ap-southeast-1.amazonaws.com/call-levels.com/icon-appstore-big.png" alt="Get Call Levels on iOS" title="Get Call Levels on iOS" /></a>
+        <a href="https://play.google.com/store/apps/details?id=com.calllevelsapp" target="_blank"><img src="https://s3-ap-southeast-1.amazonaws.com/call-levels.com/icon-googleplay-big.png" alt="Get Call Levels on Android" title="Get Call Levels on Android" /></a>
+      </div>
+    </div>
+    <div id="footer" class="mui-text-center">
+  	<p>&copy; 2015 Call Levels Pte Ltd. All rights reserved.</p>
+  	<p><a href="http://www.call-levels.com/terms" target="_blank">Terms of Use</a> | <a href="http://www.call-levels.com/privacy" target="_blank">Privacy</a></p>
+  </div>
+  </body>
+</html>

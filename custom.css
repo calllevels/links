@@ -1,0 +1,17 @@
+.center{
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+}
+.nav {
+  background: linear-gradient(to bottom, rgba(0,134,168,1) 0%, rgba(0,154,193,1) 100%);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+#footer {
+  margin: 1rem 0 ;
+}
+#footer p {
+  color: #333;
+  font-size: 12px;
+}
