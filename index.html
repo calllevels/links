@@ -4,12 +4,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- FACEBOOK OG -->
-    <meta property="og:title"       content="Start tracking your markets with Call Levels today. its simple and free!"/>
-    <meta property="og:description" content="I use Call Levels to get FREE real-time price alerts for my investments and track the markets. Try it today on both iOS and Android!"/>
-    <!-- TWITTER OG-->
-    <meta name="twitter:title"        content="Start tracking your markets with Call Levels today. its simple and free!" />
-    <meta name="twitter:description"  content="I use Call Levels to get FREE real-time price alerts for my investments and track the markets. Try it today on both iOS and Android!"/>
     <link rel="shortcut icon" href=https://s3-ap-southeast-1.amazonaws.com/call-levels.com/seo/favicon.ico type=image/x-icon>
     <link href="mui.min.css" rel="stylesheet" type="text/css" />
     <link href="custom.css" rel="stylesheet" type="text/css" />
@@ -18,6 +12,19 @@
         (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-v1.8.3.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"init data addListener removeListener setIdentity logout track link sendSMS referrals credits creditHistory applyCode validateCode getCode redeem banner closeBanner".split(" "), 0);
 
         branch.init('key_live_opjHj45QzNWHDEovg5XEobfiAvh299E7');
+
+        branch.link({
+          data: {
+              '$desktop_url': 'http://www.call-levels.com',
+              '$og_title': 'Start tracking your markets with Call Levels today. its simple and free!',
+              '$og_description': 'I use Call Levels to get FREE real-time price alerts for my investments and track the markets. Try it today on both iOS and Android!',
+              '$og_image_url': 'https://cdn.branch.io/branch-assets/1439797338254-og_image.png'
+          }
+      }, function(err, link) {
+          console.log(err, link);
+      });
+
+
         function sendSMS(form) {
             var phone = form.phone.value;
             var linkData = {
